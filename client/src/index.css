@@ -15,17 +15,28 @@
 /* Sections
    ========================================================================== */
 /**
- * Remove the margin in all browsers.
+ * Remove the margin in all browsers. and makes background black
  */
 body {
   margin: 0;
+  background-color: #000000;
 }
-
+/* makes it so that the black background doesnt cut off*/
+.black-background {
+  min-height: 100vh;
+}
 /**
  * Render the `main` element consistently in IE.
  */
 main {
   display: block;
+}
+/* centers the container*/
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 /**
