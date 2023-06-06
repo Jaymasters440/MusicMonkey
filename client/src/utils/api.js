@@ -26,23 +26,5 @@ export const getAllGenres = () => {
     });
   };
   
-  /*export const createVote = (voteData) => {
-    return fetch(`/api/genre/${voteData}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(voteData),
-    });
-  };
   
-  export const getAllTech = () => {
-    return fetch('/api/tech', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-  };
-  */
   
