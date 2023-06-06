@@ -1,9 +1,9 @@
 const express = require('express');
-// Uncomment the following code once you have built the queries and mutations in the client folder
+
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 
-// Uncomment the following code once you have built the queries and mutations in the client folder
+
 //const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
