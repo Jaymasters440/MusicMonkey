@@ -21,8 +21,19 @@ const resolvers = {
   },
 
   Mutation: {
-    createPlaylist: async (parent, { listGenre =["pop",] }) => {
-      const profile = await Profile.create({ name, email, password });
+    createPlaylist: async (parent, { listGenre = ["pop", "funk", "soul", "disco", "rock", "alternative", "jazz",] }) => {
+      const playlist = []
+
+      for (let genre of listGenre) {
+        let currentList = []
+        if (durrentList.length > 0) {
+          playlist.push(...currentList)
+        }
+      }
+
+      conslole.log(listGenre)
+
+      await Profile.create({ name, email, password });
       const token = signToken(profile);
 
       return { token, profile };
