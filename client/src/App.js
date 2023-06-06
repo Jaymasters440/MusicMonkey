@@ -11,23 +11,25 @@ function App() {
     <ApolloProvider client={new ApolloClient({ uri: 'your_graphql_endpoint', cache: new InMemoryCache() })}>
       <Router>
         <div className="black-background">
-          <div className="container is-centered">
-            <div className="columns is-centered">
-              <div className="column is-half">
-                <Routes>
-                  <Route 
-                    path="/" 
-                    element={<Home />} 
-                  />
-                  <Route 
-                    path="/genre" 
-                    element={<Genre />} 
-                  />
-                  <Route 
-                    path="/genre/:id" 
-                    element={<Vote />} 
-                  />
-                </Routes>
+          <div className="centered-container is-offset-8 is-4">
+            <div>
+              <div>
+                <div>
+                  <Routes>
+                    <Route 
+                      path="/" 
+                      element={<Home />} 
+                    />
+                    <Route 
+                      path="/genre" 
+                      element={<Genre />} 
+                    />
+                    <Route 
+                      path="/genre/:id" 
+                      element={<Vote />} 
+                    />
+                  </Routes>
+                </div>
               </div>
             </div>
           </div>
