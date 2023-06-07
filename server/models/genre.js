@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const titleSchema = new Schema(
+const genreSchema = new Schema(
     {
         name: {
             type: String,
@@ -8,9 +8,10 @@ const titleSchema = new Schema(
             unique: true,
             trim: true
         },
-        // add descriptors for Title Schema and requirements
-        //  ref: 'Class'
+        
+       
+       
     })
-    const Title = model('Title', titleSchema);
+    const Genre = model('Genre', genreSchema);
 
-    module.exports = Title;
+    module.exports = Genre;
