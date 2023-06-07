@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const genreSchema = new Schema(
+const playlistSchema = new Schema(
     {
         name: {
             type: String,
@@ -8,6 +8,14 @@ const genreSchema = new Schema(
             unique: true,
             trim: true
         },
+        song: {
+            type: Schema.types.ObjectId,
+            ref: 'Song'
+        },
+        genre: {
+            type: Schema.Types.ObjectId,
+            ref: 'Genre'
+        }
         
     })
     const Genre = model('Genre', genreSchema);
