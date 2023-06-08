@@ -1,89 +1,80 @@
 [
     {
-        "title":
-        "artist":
-        "genre":
+        "title":"Born under a Bad Sign",
+        "artist": "Robert Johnson",
+        "genre": "Blues"
     },
      {
-        "title":
-        "artist":
-        "genre":
+        "title":"The Sky is crying",
+        "artist": "Stevie Ray Vaughn",
+        "genre":"Blues"
     },
      {
-        "title":
-        "artist":
-        "genre":
+        "title": "Candy Man",
+        "artist": "Missisippi John Hurt",
+        "genre":"Blues"
     },
      {
-        "title":
-        "artist":
-        "genre":
+        "title":"Rehab",
+        "artist":"Amy Winehouse",
+        "genre":"Pop"
     },
      {
-        "title":
-        "artist":
-        "genre":
+        "title":"Hey Ya",
+        "artist":"OutKast",
+        "genre":"Pop"
     },
      {
-        "title":
-        "artist":
-        "genre":
+        "title":"Royals",
+        "artist":"Lorde",
+        "genre":"Pop"
     },
      {
-        "title":
-        "artist":
-        "genre":
+        "title":"It Wasn't Me",
+        "artist":"Shaggy",
+        "genre":"R&B"
     },
      {
-        "title":
-        "artist":
-        "genre":
+        "title":"Whatta Man",
+        "artist":"Salt N Pepa",
+        "genre":"R&B"
     },
      {
-        "title":
-        "artist":
-        "genre":
+        "title":"Family Affair",
+        "artist":"Mary J. Blige",
+        "genre":""
     },
      {
-        "title":
-        "artist":
-        "genre":
+        "title":"Play That Funky Music",
+        "artist":"Wild Cherry",
+        "genre":"Funk"
     },
      {
-        "title":
-        "artist":
-        "genre":
+        "title":"Low Rider",
+        "artist":"War",
+        "genre":"Funk"
     },
      {
-        "title":
-        "artist":
-        "genre":
+        "title":"Shining Star",
+        "artist":"Earth, Wind & Fire",
+        "genre":"Funk"
     },
      {
-        "title":
-        "artist":
-        "genre":
+        "title":"Bohemian Rhapsody",
+        "artist":"Queen",
+        "genre":"Rock"
     },
      {
-        "title":
-        "artist":
-        "genre":
+        "title":"I Can't Get No Satisfaction",
+        "artist":"Roling stones",
+        "genre":"Rock"
     },
      {
-        "title":
-        "artist":
-        "genre":
+        "title":"Purple Haze",
+        "artist":"Jimi Hendrix",
+        "genre":"Rock"
     },
-     {
-        "title":
-        "artist":
-        "genre":
-    },
-     {
-        "title":
-        "artist":
-        "genre":
-    },
+     
 
 
 ]
