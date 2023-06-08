@@ -8,8 +8,7 @@ const genreSchema = new Schema(
             unique: true,
             trim: true
         },
-        // add descriptors for Ggenre Schema and requirements
-        //  ref: 'Class'
+        
     })
     const Genre = model('Genre', genreSchema);
 

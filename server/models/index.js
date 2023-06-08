@@ -1,6 +1,8 @@
 const Genre = require('./genre');
-const Artist = require('./artist');
-const Title = require('./title');
+const Song = require('./song');
 const Playlist = require('./playlist');
+ 
 
-module.exports = { Genre, Artist, Title, Playlist };
+module.exports = { Genre };
+module.exports = { Song };
+module.exports = {Playlist };

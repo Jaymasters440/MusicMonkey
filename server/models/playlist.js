@@ -8,9 +8,16 @@ const playlistSchema = new Schema(
             unique: true,
             trim: true
         },
-        // add descriptors for artist Schema and requirements
-        //  ref: 'Class'
+        song: {
+            type: Schema.types.ObjectId,
+            ref: 'Song'
+        },
+        genre: {
+            type: Schema.Types.ObjectId,
+            ref: 'Genre'
+        }
+        
     })
-    const Playlist = model('Playlist', playlistSchema);
+    const Genre = model('Genre', genreSchema);
 
-    module.exports = Playlist;
+    module.exports = Genre;
