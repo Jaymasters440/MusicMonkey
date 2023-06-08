@@ -18,3 +18,5 @@ Build as PWA
 
 ## 👥Creditors
 Lemseh Carothers-Abdullah github: https://github.com/lemsehcar, Jay Masters github: https://github.com/JayMasters440, David (Kobby) Solomom github: https://github.com/DKSolomom, Nathan Stepper github: https://github.com/nstepper
+
+[](./client/public/index.html)
