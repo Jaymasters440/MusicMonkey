@@ -18,6 +18,6 @@ const playlistSchema = new Schema(
         }
         
     })
-    const Genre = model('Genre', genreSchema);
+    const Genre = model('Genre', playlistSchema);
 
     module.exports = Genre;

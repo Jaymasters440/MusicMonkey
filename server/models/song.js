@@ -12,13 +12,14 @@ const songSchema = new Schema(
         required: true,
         trim: true    
     },
-    genre: { 
+    genre: [ 
+    { 
         type: Schema.Types.ObjectId, 
         ref: 'Genre' 
     },
+    ],
 
-    }
-)
+});
 const Song = model('Song', songSchema);
 
 module.exports = Song;
