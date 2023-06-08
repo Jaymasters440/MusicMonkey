@@ -1,5 +1,65 @@
 [
     {
-    "name":"hip-hop"
-    }
+        "name": "Hip-hop"
+    },
+    {
+        "name": "Pop"
+    },
+    {
+        "name": "Alternative"
+    },
+    {
+        "name": "Clasic Rock"
+    },
+    {
+        "name": "Reggae"
+    },
+    {
+        "name": "Metal"
+    },
+    {
+        "name": "Classical"
+    },
+    {
+        "name": "Afrobeats"
+    },
+    {
+        "name": "Funk"
+    },
+    {
+        "name": "R&B"
+    },
+    {
+        "name": "Blues"
+    },
+    {
+        "name": "Soft Jazz"
+    },
+    {
+        "name": "Psycadellic"
+    },
+    {
+        "name": "Electronica"
+    },
+    {
+        "name": "Acid-house"
+    },
+{
+        "name":"Folk"
+    },
+{
+        "name":"Punk"
+    },
+{
+        "name":"C-pop"
+    },
+{
+        "name":"J-pop"
+    },
+{
+        "name":"hip-hop"
+    },
+{
+        "name":"Grupera"
+    }    
 ]
