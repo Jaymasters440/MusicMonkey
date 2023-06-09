@@ -9,15 +9,15 @@ const playlistSchema = new Schema(
             trim: true
         },
         song: {
-            type: Schema.types.ObjectId,
+            type: Schema.Types.ObjectId,
             ref: 'Song'
         },
         genre: {
-            type: Schema.Types.ObjectId,
+            type: String,
             ref: 'Genre'
         }
         
     })
-    const Genre = model('Genre', playlistSchema);
+    const Playlist = model('Playlist', playlistSchema);
 
-    module.exports = Genre;
+    module.exports = Playlist;

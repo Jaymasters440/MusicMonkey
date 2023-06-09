@@ -16,16 +16,16 @@ const typeDefs = gql`
 
   type Playlist {
     _id: ID
-    name: String!
-    song: [Song]!
-    genre: [Genre]!
+    name: String
+    song: [Song]
+    genre: [Genre]
   }
 
   type Song {
     _id: ID
-    title: String!
-    artist: String!
-    genre: [Genre]!
+    title: String
+    artist: String
+    genre: [Genre]
 
   }
 
@@ -34,37 +34,28 @@ const typeDefs = gql`
     user: User
   }
   type Query {
-    users: [User]
+    users: User
     genres:[Genre]
-    playlists: [Playlist]
     songs: [Song]
-    playlist: (playlistId: ID!): Playlist
+    playlists: [Playlist]
+    playlist(playlistId: [ID]!): Playlist
     
     
     
   }
 
   type Mutation {
-  login(
-    email: String!,
-    password: String!
-  ): Auth
+  login(email: String!, password: String!): Auth
 
-  addUser(
-    username: String!, 
-    email: String!, 
-    password: String!
-  ): Auth
+  addUser(username: String!, email: String!, password: String): Auth
     
-  #createPlaylist(
-   #listGenre: [String]
-  #): [Song] 
-
-  deletePlaylist(
-    playlist(id: ID!); User
-  )
+  removePlaylist(_id: [ID]!): User
   
   }
 `;
 
 module.exports = typeDefs;
+
+//createPlaylist(
+  //listGenre: [String]
+ //): [Song] 

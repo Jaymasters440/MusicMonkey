@@ -1,17 +1,27 @@
 import { gql } from '@apollo/client';
 
 
-export const QUERY_GENRE = gql`
-  query genres($_id: String) {
-    genres(_id: $_id) {
-      _id
-      country
-      western
-      rock
-      alternative
-      funk
-      
-    }
+export const QUERY_GENRES = gql`
+  query getAllGenres {
+  genres {
+    _id
+    name
   }
+}
 `;
 
+export const QUERY_PLAYLISTS = gql`
+query Playlists {
+  playlists {
+    name
+    genre {
+      name
+      _id
+    }
+    song {
+      title
+      artist
+    }
+  }
+}
+`;

@@ -4,7 +4,5 @@ const Playlist = require('./playlist');
 const User = require('./user');
  
 
-module.exports = { Genre };
-module.exports = { Song };
-module.exports = { Playlist };
-module.exports = { User };
+module.exports = { Genre, Song, Playlist, User };
+
