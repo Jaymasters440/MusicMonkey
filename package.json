@@ -1,7 +1,4 @@
 {
-  "dependencies": {
-    "bulma": "^0.9.4"
-
   "name": "MusicMonkey",
   "version": "1.0.0",
   "description": "",
@@ -20,5 +17,5 @@
   },
   "dependencies": {
     "bulma": "^0.9.4"
-  
+  }
 }
