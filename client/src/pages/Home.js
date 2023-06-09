@@ -26,31 +26,30 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="card bg-white card-rounded w-50">
-      <div className="card-header bg-dark text-center">
-        <h1> Welcome to MusicMonkey! Listen to the stuff you want!</h1>
-      </div>
-      <div className="card-body m-5">
-        <h2>Here is a list of genres listen to:</h2>
-        <ul className="square">
-          {genreList.map((genre) => {
-            return (
-              <li key={genre._id}>
-                <Link to={{ pathname: `/genre/${genre._id}` }}>
-                  {genre.tech1} vs. {genre.tech2}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-      <div className="card-footer text-center m-3">
-        <h2>Ready to select a new genre?</h2>
-        <Link to="/genre">
-          <button className="btn btn-lg btn-danger">Create Genre!</button>
-        </Link>
+    <div class="hero is-black is-fullheight">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <div class="has-border-glow">
+          <div class="columns">
+            <div class="column">
+              <h1 class="title">Welcome to Music Monkey! Listen to the stuff you want!</h1>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column">
+              <h2 class="subtitle">Here is a list of genres to listen to:</h2>
+            </div>
+          </div>
+          <div class="columns is-centered">
+            <div class="column is-flex is-flex-direction-column is-align-items-center">
+              <h2 class="subtitle">Ready to select a new genre?</h2>
+              <button class="button">CREATE GENRE!</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
   );
 };
 
