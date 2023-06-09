@@ -26,24 +26,24 @@ const Home = () => {
   }, []);
 
   return (
-    <div class="hero is-black is-fullheight">
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        <div class="has-border-glow">
-          <div class="columns">
-            <div class="column">
-              <h1 class="title">Welcome to Music Monkey! Listen to the stuff you want!</h1>
+    <div className="hero is-black is-fullheight">
+    <div className="hero-body">
+      <div className="container has-text-centered">
+        <div className="has-border-glow">
+          <div className="columns">
+            <div className="column">
+              <h1 className="title">Welcome to Music Monkey! Listen to the stuff you want!</h1>
             </div>
           </div>
-          <div class="columns">
-            <div class="column">
-              <h2 class="subtitle">Here is a list of genres to listen to:</h2>
+          <div className="columns">
+            <div className="column">
+              <h2 className="subtitle">Here is a list of genres to listen to:</h2>
             </div>
           </div>
-          <div class="columns is-centered">
-            <div class="column is-flex is-flex-direction-column is-align-items-center">
-              <h2 class="subtitle">Ready to select a new genre?</h2>
-              <button class="button">CREATE GENRE!</button>
+          <div className="columns is-centered">
+            <div className="column is-flex is-flex-direction-column is-align-items-center">
+              <h2 className="subtitle">Ready to select a new genre?</h2>
+              <Link to= "/login" className="button">LOG IN!</Link>
             </div>
           </div>
         </div>
