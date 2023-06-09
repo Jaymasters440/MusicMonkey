@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { getAllGenres } from '../utils/api';
 
 // Uncomment import statements below after building queries and mutations
-import { useQuery} from '@apollo/client';
-import {QUERY_GENRE} from '../utils/queries';
+//import { useQuery} from '@apollo/client';
+//import {QUERY_GENRE} from '../utils/queries';
 
 const Home = () => {
   const [genreList, setGenreList] = useState([]);
