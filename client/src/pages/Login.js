@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -88,9 +89,9 @@ const Login = () => {
                 </div>
                 {errorMessage && <p>{errorMessage}</p>}
                 <div className="field">
-                  <button className="button is-success" type="submit">
+                  <Link to ="/genre" className="button is-success" type="submit">
                     Login
-                  </button>
+                  </Link>
                 </div>
               </form>
             </div>
