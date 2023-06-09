@@ -59,7 +59,7 @@ const resolvers = {
     //   }
 
       //console.log(listGenre);
-     },
+     
     removePlaylist: async (parent, { playlistId, userId }) => {
       return Playlist.findOneAndUpdate(
         { _id: userId },
@@ -67,7 +67,8 @@ const resolvers = {
         { new: true }
       );
     },
-  };
+  }
+};
 
      
     

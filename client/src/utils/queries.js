@@ -10,18 +10,18 @@ export const QUERY_GENRES = gql`
 }
 `;
 
-export const QUERY_PLAYLISTS = gql`
-query Playlists {
-  playlists {
-    name
-    genre {
-      name
-      _id
-    }
-    song {
-      title
-      artist
-    }
-  }
-}
-`;
+// //export const QUERY_PLAYLISTS = gql`
+// query Playlists {
+//   playlists {
+//     name
+//     genre {
+//       name
+//       _id
+//     }
+//     song {
+//       title
+//       artist
+//     }
+//   }
+// }
+// `;
