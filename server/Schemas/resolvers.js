@@ -3,7 +3,7 @@ const { Genre } = require('../models');
 const { Playlist } = require('../models');
 const { Song } = require('../models');
 const { User } = require('../models');
-const { signToken } = require('../utils/auth');
+const { signToken } = require('../../client/src/utils/auth');
 
 const resolvers = {
   Query: {
@@ -47,8 +47,9 @@ const resolvers = {
 
       return { token, user };
     },
-    //  createPlaylist: async (parent, { listGenre = ["pop", "funk", "soul", "disco", "rock", "alternative", "jazz",] }) => {
-    //    const playlist = []
+    //  createPlaylist: async (parent, {playlistArray} ) => {
+    //   const getplaylist = await 
+    //   const playlist = []
 
     //   for (let Genre of listGenre) {
     //     let currentList = []
@@ -57,8 +58,8 @@ const resolvers = {
     //     }
     //   }
 
-    //   console.log(listGenre);
-    //  },
+      //console.log(listGenre);
+     
     removePlaylist: async (parent, { playlistId, userId }) => {
       return Playlist.findOneAndUpdate(
         { _id: userId },
