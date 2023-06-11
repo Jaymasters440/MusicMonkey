@@ -5,18 +5,20 @@ const playlistSchema = new Schema(
         name: {
             type: String,
             required:true,
-            unique: true,
             trim: true
         },
-        song: {
+        song: [
+            {
+              type: Schema.Types.ObjectId,
+              ref: 'Song'
+            }
+          ],
+        genre: [
+            {
             type: Schema.Types.ObjectId,
-            ref: 'Song'
-        },
-        genre: {
-            type: String,
             ref: 'Genre'
         }
-        
+    ]
     })
     const Playlist = model('Playlist', playlistSchema);
 

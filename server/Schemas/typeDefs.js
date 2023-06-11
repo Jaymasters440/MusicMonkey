@@ -5,18 +5,17 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    password: String
     playlist: [Playlist]
   }
 
   type Genre {
     _id:ID!
-    name: String!
+    name: String
   }
 
   type Playlist {
     _id: ID
-    name: String
+    name: String!
     song: [Song]
     genre: [Genre]
   }
@@ -33,12 +32,11 @@ const typeDefs = gql`
     token: ID!
     user: User
   }
+ 
   type Query {
-    users: User
-    genres:[Genre]
-    songs: [Song]
-    playlists: [Playlist]
-    playlist(playlistId: [ID]!): Playlist
+    user: User
+    allGenres:[Genre]
+    singlePlaylist(playlistId: ID!): Playlist
     
     
     
@@ -48,8 +46,10 @@ const typeDefs = gql`
   login(email: String!, password: String!): Auth
 
   addUser(username: String!, email: String!, password: String): Auth
+
+  createPlaylist(name: String, genres: [String]): Playlist
     
-  removePlaylist(_id: [ID]!): User
+  removePlaylist(_id: ID!): User
   
   }
 `;

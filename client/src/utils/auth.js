@@ -1,4 +1,4 @@
-const decode = require('jwt-decode');
+import decode from 'jwt-decode';
 
 class AuthService {
   getProfile() {
@@ -7,20 +7,25 @@ class AuthService {
 
   loggedIn() {
     const token = this.getToken();
-  
-    return token && !this.isTokenExpired(token) ? true : false;
+    if (!token) {
+      return false;
+    } else if (this.isTokenExpired(token)) {
+      localStorage.removeItem('id_token');
+      return false;
+    } else {
+      return true;
+    }
   }
 
   isTokenExpired(token) {
-
-    const decoded = decode(token);
-
-    if (decoded.exp < Date.now() / 1000) {
-      localStorage.removeItem('id_token');
-      return true;
+    try {
+      const decoded = decode(token);
+      if (decoded.exp < Date.now() / 1000) {
+        return true;
+      } else return false;
+    } catch (err) {
+      return false;
     }
-
-    return false;
   }
 
   getToken() {
@@ -34,9 +39,9 @@ class AuthService {
 
   logout() {
     localStorage.removeItem('id_token');
-    window.location.reload();
+    window.location.assign('/');
   }
 }
 
-//export default = new AuthService();
-
+const authService = new AuthService();
+export default authService;

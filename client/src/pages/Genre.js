@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getAllGenres } from '../models/genre.js';
+import { getAllGenres } from '../../../server';
 
 
 import { useQuery} from '@apollo/client';
