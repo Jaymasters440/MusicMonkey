@@ -1,29 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getAllGenres } from '../models/genre.js';
+// import { getAllGenres } from '../models/genre';
 
 
-import { useQuery} from '@apollo/client';
-import {QUERY_GENRE} from '../utils/querries.js';
+// import { useQuery} from '@apollo/client';
+// import {QUERY_GENRE} from '../utils/querries';
 
 const Home = () => {
   const [genreList, setGenreList] = useState([]);
 
-  useEffect(() => {
-    const getGenreList = async () => {
-      try {
-        const res = await getAllGenres();
-        if (!res.ok) {
-          throw new Error('No list of genres');
-        }
-        const genreList = await res.json();
-        setGenreList(genreList);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-    getGenreList();
-  }, []);
+  // useEffect(() => {
+    // const getGenreList = async () => {
+      // try {
+        // const res = await getAllGenres();
+        // if (!res.ok) {
+          // throw new Error('No list of genres');
+        // }
+        // const genreList = await res.json();
+        // setGenreList(genreList);
+      // } catch (err) {
+        // console.error(err);
+      // }
+    // };
+    // getGenreList();
+  // // }, []);
 
   return (
     <div className="hero is-black is-fullheight">
