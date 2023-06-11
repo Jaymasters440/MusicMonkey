@@ -3,23 +3,20 @@ const { Genre } = require('../models');
 const { Playlist } = require('../models');
 const { Song } = require('../models');
 const { User } = require('../models');
-const { signToken } = require('../../client/src/utils/auth');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
-    genres: async () => {
+    allGenres: async () => {
       return Genre.find();
     },
-    users: async () => {
-      return User.find().populate('playlists');
+    user: async (parent, args, context) => {
+      if (context.user) {
+          return User.findOne({ _id: context.user._id });
+      }
+      throw new AuthenticationError('You need to be logged in!');
     },
-    playlists: async () => {
-      return Playlist.find();
-    },
-    songs: async () => {
-      return Song.find();
-    },
-    playlist: async (parent, { playlistId }) => {
+    singlePlaylist: async (parent, { playlistId }) => {
       return Playlist.findOne({ _id: playlistId });
     }
 },
@@ -34,41 +31,75 @@ const resolvers = {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError('No user found with this email address');
+          throw new AuthenticationError('No user with this email found!');
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+          throw new AuthenticationError('Incorrect password!');
       }
 
       const token = signToken(user);
-
       return { token, user };
-    },
-    //  createPlaylist: async (parent, {playlistArray} ) => {
-    //   const getplaylist = await 
-    //   const playlist = []
+  },
+     createPlaylist: async (parent, {genres, name}, context ) => {
+      console.log(genres)
+      if (!context.user) {
+        throw new AuthenticationError('You need to be logged in!');
+      }
 
-    //   for (let Genre of listGenre) {
-    //     let currentList = []
-    //     if (currentList.length > 0) {
-    //       playlist.push(...currentList)
-    //     }
-    //   }
+      if (!Array.isArray(genres) || !genres.length > 0) {
+        throw new Error ("You need to select at least 1 genre!")
+      }
 
-      //console.log(listGenre);
-     
-    removePlaylist: async (parent, { playlistId, userId }) => {
+      if (!(typeof name === "string")) {
+        throw new Error ("You must give your playlist a name!")
+      }
+
+      let songList = [];
+      for (let genre of genres) {
+        const currentList = await Song.find().populate("genre")
+      // console.log(genre) 
+      // console.log("Blues", currentList)
+      const filterCurrentList = currentList.filter(song => {
+      const allGenres = song.genre
+      return allGenres.some(item => item.name === genre)
+      })
+      // console.log(filterCurrentList)
+
+      songList.push(...filterCurrentList)
+      } 
+      let uniqueGenres = [...songList.map(song => song.genre[0])]
+      uniqueGenres = [...new Set(uniqueGenres)]
+      let playlist = await Playlist.create({
+        name: name,
+        song: songList.map(song => song._id),
+        genre: uniqueGenres
+
+      }) 
+      // Populate song field
+      playlist = await Playlist.findById(playlist._id).populate({
+        path: "song",
+        populate: {
+          path:"genre"
+        }
+      }).populate('genre');
+      return playlist;
+     },
+
+
+    removePlaylist: async (parent, { playlistId, context }) => {
+      if (context.user) {
       return Playlist.findOneAndUpdate(
-        { _id: userId },
+        { _id: context.user._id },
         { $pull: { playlists: { _id: playlistId}}},
         { new: true }
       );
-    },
-  }
-};
+    }
+    throw new AuthenticationError('You need to be logged in!');
+  },
+}};
 
      
     

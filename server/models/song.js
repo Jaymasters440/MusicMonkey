@@ -14,7 +14,7 @@ const songSchema = new Schema(
     },
     genre: [ 
     { 
-        type: String, 
+        type: Schema.Types.ObjectId, 
         ref: 'Genre' 
     },
     ],
