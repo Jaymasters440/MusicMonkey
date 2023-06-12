@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getAllGenres } from '../utils/api';
-
+import Auth from '../utils/auth';
 // Uncomment import statements below after building queries and mutations
 //import { useQuery} from '@apollo/client';
 //import {QUERY_GENRE} from '../utils/queries';
@@ -43,7 +43,11 @@ const Home = () => {
           <div className="columns is-centered">
             <div className="column is-flex is-flex-direction-column is-align-items-center">
               <h2 className="subtitle">Ready to select a new genre?</h2>
-              <Link to= "/login" className="button">LOG IN!</Link>
+              {!Auth.loggedIn() ? 
+                <Link to= "/login" className="button">LOG IN!</Link>  
+              : 
+                <Link to= "/genre" className="button">GENRES</Link>
+              }
             </div>
           </div>
         </div>

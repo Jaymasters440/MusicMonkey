@@ -1,29 +1,105 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getAllGenres } from '../../../server';
+import Auth from '../utils/auth';
+import { useMutation, useQuery} from '@apollo/client';
+import { QUERY_GENRES } from '../utils/queries.js';
+import { CREATE_PLAYLIST } from '../utils/mutations.js';
 
 
-import { useQuery} from '@apollo/client';
-import {QUERY_GENRE} from '../utils/querries.js';
+const Genres = () => {
+  const {loading, error, data} = useQuery(QUERY_GENRES);
+  const [selectedGenres, setSelectedGenres] = useState([]);
+
+  if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
+
+  return (
+    <div>
+      {/* Once data can be fetched, this should loop through and create a div and a button for each genre. When you click the button it should add that genre to the selectedGenres array. */}
+      <div className='columns is-multiline'>
+        {data.allGenres.map((genre) => (
+          <div className='column is-one-quarter'>
+            <div className='button buttonWhite' onClick={ () => setSelectedGenres(previous => [...previous, genre.name])}>{genre.name}</div>
+          </div>
+        ))}
+      </div>
+      {/* We can also show the currently selected genres. */}
+      <h1 className='subtitle'>Selected Genres:</h1>
+      {selectedGenres.map((genre) => (
+        <div>
+          <h1 className='subtitle'>{genre}</h1>
+        </div>
+      ))}
+      <div className='button buttonWhite' onClick={()=> setSelectedGenres([])}>Reset</div>
+      <GeneratePlaylist selectedGenres={selectedGenres}/>
+    </div>
+  );
+}
+
+const GeneratePlaylist = ({selectedGenres}) => {
+  let input;
+  
+  const [createPlaylist, { data, loading, error }] = useMutation(CREATE_PLAYLIST);
+
+  if (loading) return 'Submitting...';
+  if (error) return `Submission error! ${error.message}`;
+  
+  if (!Auth.loggedIn()) {
+    return false;
+  }
+  
+  // try {
+  //   await createPlaylist(
+  //     {
+  //       variables: {
+  //         genres: selectedGenres,
+  //         name: 
+  //       }
+  //     }
+  //   );
+  // }
+  // catch (err) {
+  //   console.error(err)
+  // }
+  
+  return (
+    <div>
+      <form
+        onSubmit={e => {
+          e.preventDefault();
+          createPlaylist({ variables: { genres: selectedGenres, name: input.value } });
+          input.value = '';
+        }}
+      >
+        <input
+          ref={node => {
+            input = node;
+          }}
+        />
+        <button type="submit">Create playlist</button>
+      </form>
+    </div>
+  );
+}
 
 const Home = () => {
-  const [genreList, setGenreList] = useState([]);
+//   const [genreList, setGenreList] = useState([]);
 
-  useEffect(() => {
-    const getGenreList = async () => {
-      try {
-        const res = await getAllGenres();
-        if (!res.ok) {
-          throw new Error('No list of genres');
-        }
-        const genreList = await res.json();
-        setGenreList(genreList);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-    getGenreList();
-  }, []);
+//   useEffect(() => {
+//     const getGenreList = async () => {
+//       try {
+//         const res = await getAllGenres();
+//         if (!res.ok) {
+//           throw new Error('No list of genres');
+//         }
+//         const genreList = await res.json();
+//         setGenreList(genreList);
+//       } catch (err) {
+//         console.error(err);
+//       }
+//     };
+//     getGenreList();
+//   }, []);
 
   return (
     <div className="hero is-black is-fullheight">
@@ -38,6 +114,7 @@ const Home = () => {
           <div className="columns">
             <div className="column">
               <h2 className="subtitle">Here is a list of genres to listen to:</h2>
+              <Genres/>
             </div>
           </div>
           <div className="columns is-centered">

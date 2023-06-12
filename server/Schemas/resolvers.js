@@ -16,6 +16,14 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+    allPlaylists: async () => {
+      return Playlist.find().populate({
+        path: "song",
+        populate: {
+          path:"genre"
+        }
+      }).populate('genre');
+    },
     singlePlaylist: async (parent, { playlistId }) => {
       return Playlist.findOne({ _id: playlistId });
     }
@@ -75,8 +83,8 @@ const resolvers = {
       let playlist = await Playlist.create({
         name: name,
         song: songList.map(song => song._id),
-        genre: uniqueGenres
-
+        genre: uniqueGenres,
+        userId:context.user._id
       }) 
       // Populate song field
       playlist = await Playlist.findById(playlist._id).populate({
@@ -89,13 +97,34 @@ const resolvers = {
      },
 
 
-    removePlaylist: async (parent, { playlistId, context }) => {
+    removePlaylist: async (parent, { playlistId }, context) => {
+      console.log(context.user._id)
       if (context.user) {
-      return Playlist.findOneAndUpdate(
-        { _id: context.user._id },
-        { $pull: { playlists: { _id: playlistId}}},
-        { new: true }
-      );
+        try{
+          const deletedPlaylist = await Playlist.findOneAndDelete({_id:playlistId, userId:context.user._id })
+          .populate({
+            path: "song",
+            populate: {
+              path:"genre"
+            }
+          }).populate('genre');
+          console.log(deletedPlaylist)
+          return {
+            itemDeleted:deletedPlaylist,
+            message:`Successfully deleted playlist: ${deletedPlaylist.name}`
+          }
+        } catch(e){
+          //update message 
+          throw new AuthenticationError('This is not your playlist!');
+        }
+
+
+      // return Playlist.findOneAndUpdate(
+      //   { _id: context.user._id },
+      //   { $pull: { playlists: { _id: playlistId}}},
+      //   { new: true }
+      // );
+
     }
     throw new AuthenticationError('You need to be logged in!');
   },
