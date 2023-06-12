@@ -18,7 +18,11 @@ const playlistSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: 'Genre'
         }
-    ]
+      ],
+      userId:{
+          type: Schema.Types.ObjectId,
+          ref: 'User'
+      }
     })
     const Playlist = model('Playlist', playlistSchema);
 

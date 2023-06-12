@@ -18,6 +18,7 @@ const typeDefs = gql`
     name: String!
     song: [Song]
     genre: [Genre]
+    userId: ID
   }
 
   type Song {
@@ -32,15 +33,22 @@ const typeDefs = gql`
     token: ID!
     user: User
   }
+
+  type Message {
+    itemDeleted: Playlist
+    message:String
+  }
  
   type Query {
     user: User
     allGenres:[Genre]
+    allPlaylists: [Playlist]
     singlePlaylist(playlistId: ID!): Playlist
     
     
     
   }
+
 
   type Mutation {
   login(email: String!, password: String!): Auth
@@ -49,7 +57,7 @@ const typeDefs = gql`
 
   createPlaylist(name: String, genres: [String]): Playlist
     
-  removePlaylist(_id: ID!): User
+  removePlaylist(playlistId: ID!): Message
   
   }
 `;

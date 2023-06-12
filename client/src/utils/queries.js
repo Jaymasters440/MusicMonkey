@@ -2,8 +2,8 @@ import { gql } from '@apollo/client';
 
 
 export const QUERY_GENRES = gql`
-  query allGenres {
-  genres {
+  query Query {
+  allGenres {
     _id
     name
   }
