@@ -6,7 +6,7 @@ import { LOGIN_USER } from '../utils/mutations';
 
 const Login = () => {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
-  const [validated] = useState(false);
+ // const [validated] = useState(false);
   // const [showAlert, setShowAlert] = useState(false);
   const [login, { loading }] = useMutation(LOGIN_USER);
 
@@ -31,7 +31,7 @@ const Login = () => {
     try {
       const {data} = await login(
         {
-          variables: userFormData,
+          variables: {...userFormData},
         }
       );
       Auth.login(data.login.token);
@@ -55,7 +55,9 @@ const Login = () => {
         <div className="container">
           <div className="columns is-centered">
             <div className="column is-5-tablet is-4-desktop is-3-widescreen">
-              <form action="" noValidate validated={validated} className="box" onSubmit={handleFormSubmit}>
+              <form action=""
+               //validated={validated} 
+               className="box" onSubmit={handleFormSubmit}>
                 <div className="field">
                   <label className="label">Email</label>
                   <div className="control has-icons-left">

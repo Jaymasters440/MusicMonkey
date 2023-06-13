@@ -10,7 +10,7 @@ export const QUERY_GENRES = gql`
 }
 `;
 
-export const QUERY_Users = gql`
+export const QUERY_USERS = gql`
 query user {
   users {
     _id
@@ -37,9 +37,9 @@ query user {
 }
 `;
 
-export const QUERY_PLAYLISTS = gql`
-query singlePlaylist($playlistId: [ID]!) {
-  playlist(playlistId: $playlistId) {
+export const QUERY_PLAYLIST = gql`
+query SinglePlaylist($playlistId: ID!) {
+  singlePlaylist(playlistId: $playlistId) {
     name
     _id
     genre {
@@ -58,3 +58,15 @@ query singlePlaylist($playlistId: [ID]!) {
   }
 }
 `;
+
+export const QUERY_ALL_PLAYLISTS = gql`
+query Query {
+  allPlaylists {
+    _id
+    name
+    userId
+    genre {
+      name
+    }
+  }
+}`

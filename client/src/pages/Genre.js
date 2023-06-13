@@ -17,16 +17,16 @@ const Genres = () => {
     <div>
       {/* Once data can be fetched, this should loop through and create a div and a button for each genre. When you click the button it should add that genre to the selectedGenres array. */}
       <div className='columns is-multiline'>
-        {data.allGenres.map((genre) => (
-          <div className='column is-one-quarter'>
+        {data.allGenres.map((genre, index) => (
+          <div key={index} className='column is-one-quarter'>
             <div className='button buttonWhite' onClick={ () => setSelectedGenres(previous => [...previous, genre.name])}>{genre.name}</div>
           </div>
         ))}
       </div>
       {/* We can also show the currently selected genres. */}
       <h1 className='subtitle'>Selected Genres:</h1>
-      {selectedGenres.map((genre) => (
-        <div>
+      {selectedGenres.map((genre, index) => (
+        <div key={index}>
           <h1 className='subtitle'>{genre}</h1>
         </div>
       ))}
@@ -38,7 +38,7 @@ const Genres = () => {
 
 const GeneratePlaylist = ({selectedGenres}) => {
   let input;
-  
+  console.log(selectedGenres);
   const [createPlaylist, { data, loading, error }] = useMutation(CREATE_PLAYLIST);
 
   if (loading) return 'Submitting...';
@@ -64,19 +64,20 @@ const GeneratePlaylist = ({selectedGenres}) => {
   
   return (
     <div>
+      <h1 className='subtitle'>Playlist Name:</h1>
       <form
-        onSubmit={e => {
-          e.preventDefault();
+        onSubmit={() => {
           createPlaylist({ variables: { genres: selectedGenres, name: input.value } });
           input.value = '';
         }}
       >
-        <input
+        <input 
+          className='input'
           ref={node => {
             input = node;
           }}
         />
-        <button type="submit">Create playlist</button>
+        <button type="submit" className='button buttonWhite'>Create playlist</button>
       </form>
     </div>
   );
@@ -120,7 +121,8 @@ const Home = () => {
           <div className="columns is-centered">
             <div className="column is-flex is-flex-direction-column is-align-items-center">
               <h2 className="subtitle">Ready to select a new genre?</h2>
-              <Link to= "/login" className="button">LOG IN!</Link>
+              <Link to= "/login" className="button buttonWhite">LOG IN!</Link>
+              <Link to= "/profile" className="button buttonWhite">PROFILE</Link>
             </div>
           </div>
         </div>

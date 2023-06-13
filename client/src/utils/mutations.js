@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-export const ADD_USER = gql`
+export const ADD_PROFILE = gql`
 mutation Mutation($username: String!, $email: String!, $password: String) {
   addUser(username: $username, email: $email, password: $password) {
     token
@@ -45,27 +45,26 @@ mutation Mutation($genres: [String], $name: String) {
 `;
 
 export const REMOVE_PLAYLIST = gql`
-mutation Mutation($id: ID!) {
-  removePlaylist(_id: $id) {
-    _id
-    email
-    username
-    playlist {
+mutation Mutation($removePlaylistPlaylistId2: ID!) {
+  removePlaylist(playlistId: $removePlaylistPlaylistId2) {
+    itemDeleted {
       _id
-      name
       genre {
-        name
         _id
+        name
       }
+      name
       song {
         _id
-        title
         artist
         genre {
           _id
           name
         }
+        title
       }
+      userId
     }
+    message
   }
 }`
