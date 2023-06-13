@@ -78,13 +78,299 @@ const songList = [
       "title":"Purple Haze",
       "artist":"Jimi Hendrix",
       "genre":"Rock"
-  }
+  },
+  {
+    "title":"Taste",
+    "artist":"Tyga Featuring Offset",
+    "genre":"Rap"
+},
+{
+    "title":"Hey Mista",
+    "artist":"Isaiah Rashad",
+    "genre":"Rap"
+},
+{
+    "title":"AstroThunder",
+    "artist":"Travis Scott",
+    "genre":"Rap"
+},
+{
+    "title":"Blu Moon",
+    "artist":"THEY",
+    "genre":"Hip-Hop"
+},
+{
+    "title":"Whole Lotta Money",
+    "artist":"BIA",
+    "genre":"Hip-Hop"
+},
+{
+    "title":"Middle Child",
+    "artist":"J-cole",
+    "genre":"Hip-Hop"
+},
+{
+    "title":"Loser",
+    "artist":"Beck",
+    "genre":"Alternative"
+},
+{
+    "title":"Bastards of Young",
+    "artist":"The Replacements",
+    "genre":"Alternative"
+},
+{
+    "title":"Creep",
+    "artist":"Radiohead",
+    "genre":"Alternative"
+},
+{
+    "title":"Whole Lotta Love",
+    "artist":"Led Zeppelin",
+    "genre":"Classic Rock"
+},
+{
+    "title":"Born to be Wild",
+    "artist":"Steppenwolf",
+    "genre":"Classic Rock"
+},
+{
+    "title":"Hotel California",
+    "artist":"Eagles",
+    "genre":"Classic Rock"
+},
+{
+    "title":"No Woman No Cry",
+    "artist":"Bob Marley",
+    "genre":"Reggae"
+},
+{
+    "title":"Legalize It",
+    "artist":"Peter Tosh",
+    "genre":"Reggae"
+},
+{
+    "title":"Tomorrow People",
+    "artist":"Ziggy Marley",
+    "genre":"Reggae"
+},
+{
+    "title":"Angel of Death",
+    "artist":"Slayer",
+    "genre":"Metal"
+},
+{
+    "title":"Evil",
+    "artist":"Mercyful Fate",
+    "genre":"Metal"
+},
+{
+    "title":"Sweet Child O' Mine",
+    "artist":"Guns N' Roses",
+    "genre":"Metal"
+},
+{
+    "title":"Moonlight Sonata",
+    "artist":"Beethoven",
+    "genre":"Classical"
+},
+{
+    "title":"Orchestral Suite No. 3",
+    "artist":"Johann Sebastiean Bach",
+    "genre":"Classical"
+},
+{
+    "title":"Swan Lake",
+    "artist":"Tchaikovsky",
+    "genre":"Classical"
+},
+{
+    "title":"Acid Attack",
+    "artist":"Mr. Fingers",
+    "genre":"Acid House"
+},
+{
+    "title":"Code-of-Acid",
+    "artist":"Code 3",
+    "genre":"Acid House"
+},
+{
+    "title":"Harder, Better, Faster, Stronger",
+    "artist":"Daft Punk",
+    "genre":"Electronic"
+},
+{
+    "title":"Strobe",
+    "artist":"Deadmau5",
+    "genre":"Electronic"
+},
+{
+    "title":"Flow Coma",
+    "artist":"808 State",
+    "genre":"Acid House"
+},
+{
+    "title":"Praise you",
+    "artist":"Fatboy Slim",
+    "genre":"Electronic"
+},
+{
+    "title":"Lucy in the Sky with Diamonds",
+    "artist":"The Beatles",
+    "genre":"Psycadelic"
+},
+{
+    "title":"White Rabbit",
+    "artist":"Jefferson Airplane",
+    "genre":"Psycadelic"
+},
+{
+    "title":"The End",
+    "artist":"The Doors",
+    "genre":"Psycadelic"
+},
+{
+    "title":"Tiánmì mì ",
+    "artist":"Tiánmì mì ",
+    "genre":"C Pop"
+},
+{
+    "title":"Xiǎo píngguǒ",
+    "artist":"Chopstick Brothers",
+    "genre":"C Pop"
+},
+{
+    "title":"Dāng (当)",
+    "artist":"Power Station",
+    "genre":"C Pop"
+},
+{
+    "title":"LADY",
+    "artist":"Kenshi Yonezu",
+    "genre":"J-pop"
+},
+{
+    "title":"NIGHT DANCER",
+    "artist":"imase",
+    "genre":"J-pop"
+},
+{
+    "title":"Matsuri",
+    "artist":"Fuji Kaze",
+    "genre":"J-pop"
+},
+{
+    "title":"Here Comes Your Man",
+    "artist":"Pixies",
+    "genre":"Indie"
+},
+{
+    "title":"Ball And Biscuit",
+    "artist":"the White Stripes",
+    "genre":"Indie"
+},
+{
+    "title":"Radio Free Europe",
+    "artist":"R.E.M.",
+    "genre":"Indie"
+},
+{
+    "title":"Unforgettable",
+    "artist":"French Montana",
+    "genre":"Afrobeats"
+},
+{
+    "title":"Woman",
+    "artist":"Doja Cat",
+    "genre":"Afrobeats"
+},
+{
+    "title":"Soweto",
+    "artist":"Victony",
+    "genre":"Afrobeats"
+},
+{
+    "title":"Just the Two of Us",
+    "artist":"Grover Washington, Jr.",
+    "genre":"Soft Jazz"
+},
+{
+    "title":"Smooth Operator",
+    "artist":"Sade",
+    "genre":"Soft Jazz"
+},
+{
+    "title":"White",
+    "artist":"Frank Ocean",
+    "genre":"Soft Jazz"
+},
+{
+    "title":"Like a Rolling Stone",
+    "artist":"Bob Dylan",
+    "genre":"Folk"
+},
+{
+    "title":"Hurt",
+    "artist":"Johnny Cash",
+    "genre":"Folk"
+},
+{
+    "title":"Skinny Love",
+    "artist":"Bon Iver",
+    "genre":"Folk"
+},
+{
+    "title":"La Chona",
+    "artist":"Los Tucanes De Tijuana",
+    "genre":"Grupera"
+},
+{
+    "title":"La Puerta Negra",
+    "artist":"Los Tigres Del Norte",
+    "genre":"Grupera"
+},
+{
+    "title":"Para Que Regreses",
+    "artist":"El Chapo De Sinaloa",
+    "genre":"Grupera"
+},
+{
+    "title":"Anarchy in the U.K.",
+    "artist":"Sex Pistols",
+    "genre":"Punk"
+},
+{
+    "title":"London Calling",
+    "artist":"The Clash",
+    "genre":"Punk"
+},
+{
+    "title":"Blitzkrieg Bop",
+    "artist":"Ramones",
+    "genre":"Punk"
+},
+{
+    "title":"The Guillotine",
+    "artist":"Escape the Fate",
+    "genre":"Screamo"
+},
+{
+    "title":"The Crimson",
+    "artist":"Atreyu",
+    "genre":"Screamo"
+},
+{
+    "title":"I Got Punched in the Nose for Sticking My Face in Other People’s Business",
+    "artist":"Boy's Night Out",
+    "genre":"Screamo"
+},
+
 ];
 
 
 const genreList = [
     {
-      "name": "Hip-hop"
+      "name": "Hip-Hop"
   },
   {
       "name": "Pop"
@@ -93,7 +379,7 @@ const genreList = [
       "name": "Alternative"
   },
   {
-      "name": "Clasic Rock"
+      "name": "Classic Rock"
   },
   {
       "name": "Reggae"
@@ -120,13 +406,13 @@ const genreList = [
       "name": "Soft Jazz"
   },
   {
-      "name": "Psycadellic"
+      "name": "Psycadelic"
   },
   {
-      "name": "Electronica"
+      "name": "Electronic"
   },
   {
-      "name": "Acid-house"
+      "name": "Acid House"
   },
 {
       "name":"Folk"
@@ -145,7 +431,20 @@ const genreList = [
   },
   {
     "name": "Rock"
-  }    
+  },
+  {
+    "name": "Rap"
+  } , 
+  {
+    "name": "Indie"
+  },
+  {
+    "name": "Screamo"
+  },
+  
+  
+  
+
    ];
 
 

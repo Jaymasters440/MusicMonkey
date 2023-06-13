@@ -38,8 +38,12 @@ const Genres = () => {
 
 const GeneratePlaylist = ({selectedGenres}) => {
   let input;
-  console.log(selectedGenres);
+  const [genreArray, setGenreArray] = useState([])
   const [createPlaylist, { data, loading, error }] = useMutation(CREATE_PLAYLIST);
+
+  useEffect(()=> {
+    setGenreArray(selectedGenres);
+  }, [selectedGenres])
 
   if (loading) return 'Submitting...';
   if (error) return `Submission error! ${error.message}`;
@@ -48,26 +52,15 @@ const GeneratePlaylist = ({selectedGenres}) => {
     return false;
   }
   
-  // try {
-  //   await createPlaylist(
-  //     {
-  //       variables: {
-  //         genres: selectedGenres,
-  //         name: 
-  //       }
-  //     }
-  //   );
-  // }
-  // catch (err) {
-  //   console.error(err)
-  // }
+  console.log(genreArray)
   
   return (
     <div>
       <h1 className='subtitle'>Playlist Name:</h1>
       <form
-        onSubmit={() => {
-          createPlaylist({ variables: { genres: selectedGenres, name: input.value } });
+        onSubmit={(e) => {
+          e.preventDefault()
+          createPlaylist({ variables: { genres: genreArray, name: input.value } });
           input.value = '';
         }}
       >

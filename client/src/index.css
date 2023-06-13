@@ -50,6 +50,7 @@ background: linear-gradient(179deg, #00a4fb, #00dcfb, #6f00fb, #9000fb, #00fbd5,
 .subtitle {
   color: #000;
   font-family: 'Zilla Slab', serif;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -83,6 +84,7 @@ background: linear-gradient(179deg, #00a4fb, #00dcfb, #6f00fb, #9000fb, #00fbd5,
   font-size: 18px;
   background: rgb(89,9,238);
   background: radial-gradient(circle, rgba(89,9,238,1) 0%, rgba(201,34,168,1) 84%, rgba(249,44,138,1) 100%);  
+  margin: 20px;
 }
 
 /* */
