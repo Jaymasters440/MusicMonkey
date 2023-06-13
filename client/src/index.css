@@ -110,3 +110,7 @@ background: linear-gradient(179deg, #00a4fb, #00dcfb, #6f00fb, #9000fb, #00fbd5,
   color: white;
   width: 150px;
 }
+
+.blackText {
+  color: #000;
+}

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getAllGenres } from '../utils/api';
+import { QUERY_GENRES} from '../utils/queries'
 import Auth from '../utils/auth';
+import { useQuery } from '@apollo/client';
 // Uncomment import statements below after building queries and mutations
 //import { useQuery} from '@apollo/client';
 //import {QUERY_GENRE} from '../utils/queries';
@@ -9,10 +10,11 @@ import Auth from '../utils/auth';
 const Home = () => {
   const [genreList, setGenreList] = useState([]);
 
+  const allGenres = useQuery(QUERY_GENRES)
   useEffect(() => {
     const getGenreList = async () => {
       try {
-        const res = await getAllGenres();
+        const res = await allGenres();
         if (!res.ok) {
           throw new Error('No list of genres');
         }

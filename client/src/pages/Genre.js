@@ -38,7 +38,7 @@ const Genres = () => {
 
 const GeneratePlaylist = ({selectedGenres}) => {
   let input;
-  
+  console.log(selectedGenres);
   const [createPlaylist, { data, loading, error }] = useMutation(CREATE_PLAYLIST);
 
   if (loading) return 'Submitting...';
@@ -64,19 +64,20 @@ const GeneratePlaylist = ({selectedGenres}) => {
   
   return (
     <div>
+      <h1 className='subtitle'>Playlist Name:</h1>
       <form
-        onSubmit={e => {
-          e.preventDefault();
+        onSubmit={() => {
           createPlaylist({ variables: { genres: selectedGenres, name: input.value } });
           input.value = '';
         }}
       >
-        <input
+        <input 
+          className='input'
           ref={node => {
             input = node;
           }}
         />
-        <button type="submit">Create playlist</button>
+        <button type="submit" className='button buttonWhite'>Create playlist</button>
       </form>
     </div>
   );
@@ -120,7 +121,8 @@ const Home = () => {
           <div className="columns is-centered">
             <div className="column is-flex is-flex-direction-column is-align-items-center">
               <h2 className="subtitle">Ready to select a new genre?</h2>
-              <Link to= "/login" className="button">LOG IN!</Link>
+              <Link to= "/login" className="button buttonWhite">LOG IN!</Link>
+              <Link to= "/profile" className="button buttonWhite">PROFILE</Link>
             </div>
           </div>
         </div>

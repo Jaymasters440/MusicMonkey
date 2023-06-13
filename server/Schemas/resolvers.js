@@ -25,7 +25,12 @@ const resolvers = {
       }).populate('genre');
     },
     singlePlaylist: async (parent, { playlistId }) => {
-      return Playlist.findOne({ _id: playlistId });
+      return Playlist.findOne({ _id: playlistId }).populate({
+        path: "song",
+        populate: {
+          path:"genre"
+        }
+      }).populate('genre');
     }
 },
 
