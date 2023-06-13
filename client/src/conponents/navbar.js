@@ -12,6 +12,7 @@ const AppNavbar = () => {
             
      <div className='navbar-item'>
             <Link to= "/profile" className="button buttonWhite">PROFILE</Link>
+            <Link to= "/genre" className="button buttonWhite">Create a Playlist</Link>
             <div onClick={()=>{Auth.logout()}} className="button buttonWhite">LOG OUT</div>
         </div>
        

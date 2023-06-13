@@ -2,7 +2,7 @@
 MusicMonkey
 
 ## 📝Description 
-A music app that is talored to the users interests.
+A music app that is talored to the users interests. Designed with REACT and Apollo
 
 ## 🔖User Story
 As a music enthusiast, I want a music app that does not deviate from my preferences when I choose a genre.
