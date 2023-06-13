@@ -31,7 +31,7 @@ const Signup = () => {
 
     try {
       const { data } = await addProfile({
-        variables: { ...formState },
+        variables: { ...formState, username:formState.email },
       });
 
       Auth.login(data.addProfile.token);

@@ -61,10 +61,10 @@ const Profile = () => {
                 </div>
               </div>
               <div className='columns is-multiline'>
-                {data.allPlaylists.map((playlist) => (
+                {data.allPlaylists.map((playlist,index) => (
                   // The code below will filter the list of playlists to only show ones that are tied to your account
                   playlist.userId == Auth.getProfile().data._id ?
-                  <div className='column is-one-quarter'>
+                  <div key={index} className='column is-one-quarter'>
                     <div 
                       className='button buttonWhite' 
                       onClick={()=> {
@@ -111,16 +111,16 @@ const Playlist = ({playlist, setPlaylistSelected}) => {
               </div>
               <h2 className='subtitle'>Genres:</h2>
               <ul>
-              {data.singlePlaylist.genre.map((genre) => (
-                <li>
+              {data.singlePlaylist.genre.map((genre, index) => (
+                <li key={index}>
                   <h1>{genre.name}</h1>
                 </li>
               ))}
               </ul>
               <h2 className='subtitle'>Songs:</h2>
               <ul>
-              {data.singlePlaylist.song.map((song) => (
-                <li>
+              {data.singlePlaylist.song.map((song, index) => (
+                <li key={index}>
                   <h1>{song.title} - {song.artist}</h1>
                 </li>
               ))}

@@ -17,16 +17,16 @@ const Genres = () => {
     <div>
       {/* Once data can be fetched, this should loop through and create a div and a button for each genre. When you click the button it should add that genre to the selectedGenres array. */}
       <div className='columns is-multiline'>
-        {data.allGenres.map((genre) => (
-          <div className='column is-one-quarter'>
+        {data.allGenres.map((genre, index) => (
+          <div key={index} className='column is-one-quarter'>
             <div className='button buttonWhite' onClick={ () => setSelectedGenres(previous => [...previous, genre.name])}>{genre.name}</div>
           </div>
         ))}
       </div>
       {/* We can also show the currently selected genres. */}
       <h1 className='subtitle'>Selected Genres:</h1>
-      {selectedGenres.map((genre) => (
-        <div>
+      {selectedGenres.map((genre, index) => (
+        <div key={index}>
           <h1 className='subtitle'>{genre}</h1>
         </div>
       ))}
