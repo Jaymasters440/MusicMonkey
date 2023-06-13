@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getAllGenres } from '../utils/api';
-
+import { QUERY_GENRES} from '../utils/queries'
+import Auth from '../utils/auth';
+import { useQuery, useLazyQuery } from '@apollo/client';
 // Uncomment import statements below after building queries and mutations
 //import { useQuery} from '@apollo/client';
 //import {QUERY_GENRE} from '../utils/queries';
@@ -9,15 +10,18 @@ import { getAllGenres } from '../utils/api';
 const Home = () => {
   const [genreList, setGenreList] = useState([]);
 
+  // const allGenres = useQuery(QUERY_GENRES);
+  const [loadData, { called, loading, data }] = useLazyQuery(QUERY_GENRES);
   useEffect(() => {
     const getGenreList = async () => {
       try {
-        const res = await getAllGenres();
-        if (!res.ok) {
+        console.log('failed?')
+        const {data} = await loadData();
+        console.log('res', data)
+        if (!data) {
           throw new Error('No list of genres');
         }
-        const genreList = await res.json();
-        setGenreList(genreList);
+        setGenreList(data?.allGenres);
       } catch (err) {
         console.error(err);
       }
@@ -43,7 +47,11 @@ const Home = () => {
           <div className="columns is-centered">
             <div className="column is-flex is-flex-direction-column is-align-items-center">
               <h2 className="subtitle">Ready to select a new genre?</h2>
-              <Link to= "/login" className="button">LOG IN!</Link>
+              {!Auth.loggedIn() ? 
+                <Link to= "/login" className="button">LOG IN!</Link>  
+              : 
+                <Link to= "/genre" className="button">GENRES</Link>
+              }
             </div>
           </div>
         </div>
