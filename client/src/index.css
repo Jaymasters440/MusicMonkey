@@ -4,51 +4,66 @@
 /*this is to improve coni*/
 *{
   font-family: "Zilla Slab", serif;
-  color: antiquewhite;
 }
 
-/*this is to give the container a cool gradient*/
+.hero-background {
+  position: relative;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+
+
+
+/*this is to give the container a cool animated gradient*/
 .container {
   border: 1px solid #000; 
 border-radius: 10px;
 padding: 15px 45px;
 text-align: center;
 color: white; 
-background: linear-gradient(179deg, #00a4fb, #00dcfb, #6f00fb, #9000fb, #00fbd5, #c300fb);
-  background-size: 1200% 1200%;
+background: linear-gradient(217deg, #000000, #00b2ff, #000000, #6d00e1);
+background-size: 800% 800%;
 
-  -webkit-animation: GradientAnimation 54s ease infinite;
-  -moz-animation: GradientAnimation 54s ease infinite;
-  -o-animation: GradientAnimation 54s ease infinite;
-  animation: GradientAnimation 54s ease infinite;
+-webkit-animation: GradientAnimation 30s ease infinite;
+-moz-animation: GradientAnimation 30s ease infinite;
+-o-animation: GradientAnimation 30s ease infinite;
+animation: GradientAnimation 30s ease infinite;
 }
 
-/*this is to animate the gradient background to give it a cool professional look*/
 @-webkit-keyframes GradientAnimation {
-  0%{background-position:50% 0%}
-  50%{background-position:51% 100%}
-  100%{background-position:50% 0%}
+0%{background-position:96% 0%}
+50%{background-position:5% 100%}
+100%{background-position:96% 0%}
 }
 @-moz-keyframes GradientAnimation {
-  0%{background-position:50% 0%}
-  50%{background-position:51% 100%}
-  100%{background-position:50% 0%}
+0%{background-position:96% 0%}
+50%{background-position:5% 100%}
+100%{background-position:96% 0%}
 }
 @-o-keyframes GradientAnimation {
-  0%{background-position:50% 0%}
-  50%{background-position:51% 100%}
-  100%{background-position:50% 0%}
+0%{background-position:96% 0%}
+50%{background-position:5% 100%}
+100%{background-position:96% 0%}
 }
 @keyframes GradientAnimation {
-  0%{background-position:50% 0%}
-  50%{background-position:51% 100%}
-  100%{background-position:50% 0%}
+0%{background-position:96% 0%}
+50%{background-position:5% 100%}
+100%{background-position:96% 0%}
 }
-
 /* */
 .title,
 .subtitle {
-  color: #000;
   font-family: 'Zilla Slab', serif;
   margin-bottom: 20px;
 }
@@ -61,7 +76,7 @@ background: linear-gradient(179deg, #00a4fb, #00dcfb, #6f00fb, #9000fb, #00fbd5,
   border-width: 0;
   box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
   box-sizing: border-box;
-  color: #36395A;
+  color: black;
   cursor: pointer;
   display: inline-flex;
   height: 48px;
@@ -110,3 +125,26 @@ background: linear-gradient(179deg, #00a4fb, #00dcfb, #6f00fb, #9000fb, #00fbd5,
   color: white;
   width: 150px;
 }
+
+
+.field,
+.label,
+.box {
+background: rgba(255, 255, 255, 0.07);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(7.5px);
+-webkit-backdrop-filter: blur(7.5px);
+color: aliceblue;
+}
+
+.sbutton,
+.input {
+color: aliceblue;
+background: rgba(255, 255, 255, 0.1);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(7.5px);
+-webkit-backdrop-filter: blur(7.5px);
+}
+
