@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import Auth from '../utils/auth';
 import { useMutation } from '@apollo/client';
 import { ADD_PROFILE } from '../utils/mutations';
 
-import Auth from '../utils/auth';
+
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -12,7 +12,7 @@ const Signup = () => {
     email: '',
     password: '',
   });
-  const [addProfile, { error, data }] = useMutation(ADD_PROFILE);
+  const [addProfile, { data }] = useMutation(ADD_PROFILE);
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -41,61 +41,75 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
-          <div className="card-body">
+    <section className="hero is-fullheight">
+      <div className="hero-body">
+        <div className="container">
+          <div className="columns is-centered">
+          <div className="column is-5-tablet is-4-desktop is-3-widescreen">
             {data ? (
               <p>
                 Success! You may now head{' '}
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
+              <form action=""
+              className="box" onSubmit={handleFormSubmit}>
+                <div className="field">
+                  <label className="label">Username</label>
+                  <div className="control has-icons-left">
                 <input
-                  className="form-input"
+                  className="input"
                   placeholder="Your username"
                   name="name"
                   type="text"
+                  required
                   value={formState.name}
                   onChange={handleChange}
                 />
+                </div>
+                </div>
+                 <div className="field">
+                 <label className="label">Email</label>
+                 <div className="control has-icons-left">
                 <input
-                  className="form-input"
+                  className="input"
                   placeholder="Your email"
                   name="email"
                   type="email"
+                  required
                   value={formState.email}
                   onChange={handleChange}
                 />
+                </div>
+                </div>
+                <div className="field">
+                  <label className="label">Password</label>
+                  <div className="control has-icons-left">
                 <input
-                  className="form-input"
-                  placeholder="******"
+                  className="input"
+                  placeholder="Your password"
                   name="password"
                   type="password"
                   value={formState.password}
                   onChange={handleChange}
                 />
+                </div>
+                </div>
+                <div className="field">
                 <button
-                  className="btn btn-block btn-info"
-                  style={{ cursor: 'pointer' }}
+                  className="button is-success"
                   type="submit"
                 >
                   Submit
                 </button>
+                </div>
               </form>
             )}
-
-            {error && (
-              <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
-              </div>
-            )}
+            </div>
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 };
 

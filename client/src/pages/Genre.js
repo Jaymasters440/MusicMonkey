@@ -24,7 +24,7 @@ const Genres = () => {
         ))}
       </div>
       {/* We can also show the currently selected genres. */}
-      <h1 className='subtitle'>Selected Genres:</h1>
+      <h1 className='subtitle genresubtitle'>Selected Genres:</h1>
       {selectedGenres.map((genre, index) => (
         <div key={index}>
           <h1 className='subtitle'>{genre}</h1>
@@ -38,8 +38,12 @@ const Genres = () => {
 
 const GeneratePlaylist = ({selectedGenres}) => {
   let input;
-  console.log(selectedGenres);
+  const [genreArray, setGenreArray] = useState([])
   const [createPlaylist, { data, loading, error }] = useMutation(CREATE_PLAYLIST);
+
+  useEffect(()=> {
+    setGenreArray(selectedGenres);
+  }, [selectedGenres])
 
   if (loading) return 'Submitting...';
   if (error) return `Submission error! ${error.message}`;
@@ -48,36 +52,25 @@ const GeneratePlaylist = ({selectedGenres}) => {
     return false;
   }
   
-  // try {
-  //   await createPlaylist(
-  //     {
-  //       variables: {
-  //         genres: selectedGenres,
-  //         name: 
-  //       }
-  //     }
-  //   );
-  // }
-  // catch (err) {
-  //   console.error(err)
-  // }
+  console.log(genreArray)
   
   return (
     <div>
-      <h1 className='subtitle'>Playlist Name:</h1>
+      <h1 className='subtitle genresubtitle'>Give your playlist a name!</h1>
       <form
-        onSubmit={() => {
-          createPlaylist({ variables: { genres: selectedGenres, name: input.value } });
+        onSubmit={(e) => {
+          e.preventDefault()
+          createPlaylist({ variables: { genres: genreArray, name: input.value } });
           input.value = '';
         }}
       >
         <input 
-          className='input'
+          className='input has-text-centered'
           ref={node => {
             input = node;
           }}
         />
-        <button type="submit" className='button buttonWhite'>Create playlist</button>
+        <button type="submit" className='button buttonWhite'>Create playlist!</button>
       </form>
     </div>
   );
@@ -109,20 +102,14 @@ const Home = () => {
         <div className="has-border-glow">
           <div className="columns">
             <div className="column">
-              <h1 className="title">Welcome to Music Monkey! Listen to the stuff you want!</h1>
+              <h1 className="title genretitle">Create your playlist here!</h1>
             </div>
           </div>
           <div className="columns">
             <div className="column">
-              <h2 className="subtitle">Here is a list of genres to listen to:</h2>
+              <h2 className="subtitle genresubtitle">Choose your genres below:</h2>
               <Genres/>
-            </div>
-          </div>
-          <div className="columns is-centered">
-            <div className="column is-flex is-flex-direction-column is-align-items-center">
-              <h2 className="subtitle">Ready to select a new genre?</h2>
-              <Link to= "/login" className="button buttonWhite">LOG IN!</Link>
-              <Link to= "/profile" className="button buttonWhite">PROFILE</Link>
+            
             </div>
           </div>
         </div>
