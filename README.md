@@ -28,8 +28,6 @@ After creating an account and signing in, select a genre or genre's you like and
 ![Profile](./client/public/images/Screenshot%20(161).png)
 
 
-![]
-
 
 
 ## Application Link
