@@ -1,0 +1,138 @@
+/*this is used to import the specific font*/
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500&display=swap');
+
+/*this is to improve coni*/
+*{
+  font-family: "Zilla Slab", serif;
+  color: antiquewhite;
+}
+
+/*this is to give the container a cool gradient*/
+.container {
+  border: 1px solid #000; 
+border-radius: 10px;
+padding: 15px 45px;
+text-align: center;
+color: white; 
+background: linear-gradient(179deg, #00a4fb, #00dcfb, #6f00fb, #9000fb, #00fbd5, #c300fb);
+  background-size: 1200% 1200%;
+
+  -webkit-animation: GradientAnimation 54s ease infinite;
+  -moz-animation: GradientAnimation 54s ease infinite;
+  -o-animation: GradientAnimation 54s ease infinite;
+  animation: GradientAnimation 54s ease infinite;
+}
+
+/*this is to animate the gradient background to give it a cool professional look*/
+@-webkit-keyframes GradientAnimation {
+  0%{background-position:50% 0%}
+  50%{background-position:51% 100%}
+  100%{background-position:50% 0%}
+}
+@-moz-keyframes GradientAnimation {
+  0%{background-position:50% 0%}
+  50%{background-position:51% 100%}
+  100%{background-position:50% 0%}
+}
+@-o-keyframes GradientAnimation {
+  0%{background-position:50% 0%}
+  50%{background-position:51% 100%}
+  100%{background-position:50% 0%}
+}
+@keyframes GradientAnimation {
+  0%{background-position:50% 0%}
+  50%{background-position:51% 100%}
+  100%{background-position:50% 0%}
+}
+
+/* */
+.title,
+.subtitle {
+  color: #000;
+  font-family: 'Zilla Slab', serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* */
+.button {
+  align-items: center;
+  appearance: none;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+  background: rgb(89,9,238);
+  background: radial-gradient(circle, rgba(89,9,238,1) 0%, rgba(201,34,168,1) 84%, rgba(249,44,138,1) 100%);  
+  margin: 20px;
+}
+
+/* */
+.button:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+/* */
+.button:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px;
+  transform: translateY(-2px);
+  background: rgb(89,9,238);
+  background: radial-gradient(circle, rgba(89,9,238,1) 0%, rgba(201,34,168,1) 64%, rgba(249,44,138,1) 100%);   
+}
+
+/* */
+.button:active {
+  color: whitesmoke;
+  transform: translateY(2px);
+  background: rgb(249,44,138);
+  background: radial-gradient(circle, rgba(249,44,138,1) 0%, rgba(201,34,168,1) 64%, rgba(89,9,238,1) 100%); 
+}
+
+.buttonWhite {
+  color: white;
+  width: 150px;
+}
+
+.blackText {
+  color: #000;
+}
+
+.hometitle {
+  font-size: 100px;
+}
+
+.subtitle {
+  font-size: 45px;
+}
+
+.genretitle {
+  font-size: 60px;
+}
+
+.genresubtitle {
+  font-size: 28px;
+}
+
+.musicnavbar {
+  color: #000;
+}
