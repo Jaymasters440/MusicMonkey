@@ -1,7 +1,6 @@
 {
   "name": "musicmonkey",
   "version": "0.1.0",
-  "homepage": "https://jaymasters440.github.io/react-gh-pages",
   "private": true,
   "proxy": "http://localhost:3001",
 
